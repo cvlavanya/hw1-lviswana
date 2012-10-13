@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <collectionReaderDescription xmlns="http://uima.apache.org/resourceSpecifier">
   <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
-  <implementationName>org.apache.uima.examples.cpe.FileSystemCollectionReader</implementationName>
+  <implementationName>hw1-lviswana/src/main/resources/collectionReaderDescriptor</implementationName>
   <processingResourceMetaData>
     <name>Collection Reader Descriptor</name>
     <description>Reads files from the filesystem.  This CollectionReader may be used
@@ -68,7 +68,7 @@
     </configurationParameterSettings>
     <typeSystemDescription>
       <imports>
-        <import name="org.apache.uima.examples.SourceDocumentInformation"/>
+        <import name="typeSystemDescriptor"/>
       </imports>
     </typeSystemDescription>
     <typePriorities/>
@@ -77,7 +77,7 @@
       <capability>
         <inputs/>
         <outputs>
-          <type allAnnotatorFeatures="true">org.apache.uima.examples.SourceDocumentInformation</type>
+          <type allAnnotatorFeatures="true">hw1-lviswana/src/main/resources/collectionReaderDescriptor</type>
         </outputs>
         <languagesSupported/>
       </capability>
