@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <collectionReaderDescription xmlns="http://uima.apache.org/resourceSpecifier">
   <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
-  <implementationName>hw1-lviswana/src/main/resources/collectionReaderDescriptor</implementationName>
+  <implementationName>collectionReader</implementationName>
   <processingResourceMetaData>
-    <name>Collection Reader Descriptor</name>
-    <description>Reads files from the filesystem.  This CollectionReader may be used
-          with or without a CAS Initializer.  If a CAS Initializer is supplied, it will
-          be passed an InputStream to the file and must populate the CAS from that
-          InputStream.  If no CAS Initializer is supplied, this CollectionReader will
-          read the file itself and set treat the entire contents of the file as the
-          document to be inserted into the CAS.</description>
+    <name>collectionReader</name>
+    <description/>
     <version>1.0</version>
-    <vendor>The Apache Software Foundation</vendor>
-    <configurationParameters>
+    <vendor/>
+    
+   <configurationParameters>
       <configurationParameter>
         <name>InputDirectory</name>
         <description>Directory containing input files</description>
@@ -50,7 +46,7 @@
       <nameValuePair>
         <name>InputDirectory</name>
         <value>
-          <string>/Users/cvl/Work/workspace/hw1-lviswana/src/main/resources/data</string>
+          <string>hw1-lviswana/src/main/resources/data</string>
         </value>
       </nameValuePair>
       <nameValuePair>
@@ -66,9 +62,11 @@
         </value>
       </nameValuePair>
     </configurationParameterSettings>
+
+
     <typeSystemDescription>
       <imports>
-        <import name="typeSystemDescriptor"/>
+        <import name="typeSystem"/>
       </imports>
     </typeSystemDescription>
     <typePriorities/>
@@ -77,7 +75,7 @@
       <capability>
         <inputs/>
         <outputs>
-          <type allAnnotatorFeatures="true">hw1-lviswana/src/main/resources/collectionReaderDescriptor</type>
+          <type allAnnotatorFeatures="true">geneTagging</type>
         </outputs>
         <languagesSupported/>
       </capability>
