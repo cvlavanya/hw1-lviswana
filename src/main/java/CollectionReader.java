@@ -47,12 +47,12 @@ import org.apache.uima.util.ProgressImpl;
  * 
  * 
  */
-public class FileSystemCollectionReader extends CollectionReader_ImplBase {
+public class CollectionReader extends CollectionReader_ImplBase {
   /**
    * Name of configuration parameter that must be set to the path of a directory containing input
    * files.
    */
-  public static final String PARAM_INPUTDIR = "InputDirectory";
+  public static final String PARAM_INPUTFILE = "InputFile";
 
   /**
    * Name of configuration parameter that contains the character encoding used by the input files.
@@ -86,10 +86,7 @@ public class FileSystemCollectionReader extends CollectionReader_ImplBase {
    * @see org.apache.uima.collection.CollectionReader_ImplBase#initialize()
    */
   public void initialize() throws ResourceInitializationException {
-    File directory = new File(((String) getConfigParameterValue(PARAM_INPUTDIR)).trim());
-    mEncoding  = (String) getConfigParameterValue(PARAM_ENCODING);
-    mLanguage  = (String) getConfigParameterValue(PARAM_LANGUAGE);
-    mRecursive = (Boolean) getConfigParameterValue(PARAM_SUBDIR);
+    File directory = new File(((String) getConfigParameterValue(PARAM_INPUTFILE)).trim());
     if (null == mRecursive) { // could be null if not set, it is optional
       mRecursive = Boolean.FALSE;
     }
@@ -98,7 +95,7 @@ public class FileSystemCollectionReader extends CollectionReader_ImplBase {
     // if input directory does not exist or is not a directory, throw exception
     if (!directory.exists() || !directory.isDirectory()) {
       throw new ResourceInitializationException(ResourceConfigurationException.DIRECTORY_NOT_FOUND,
-              new Object[] { PARAM_INPUTDIR, this.getMetaData().getName(), directory.getPath() });
+              new Object[] { PARAM_INPUTFILE, this.getMetaData().getName(), directory.getPath() });
     }
 
     // get list of files in the specified directory, and subdirectories if the
