@@ -7,7 +7,9 @@ import org.apache.uima.tutorial.RoomNumber;
 import org.apache.uima.tutorial.UimaAcronym;
 
 import java.util.Iterator;
+import java.util.Set;
 
+import com.aliasi.chunk.Chunk;
 import com.aliasi.chunk.Chunker;
 import com.aliasi.chunk.Chunking;
 
@@ -49,19 +51,27 @@ public class GeneAnnotator extends JCasAnnotator_ImplBase {
 				//Annotate each line using LingPipe
 				
 				Chunking chunking = chunker.chunk(resultSentence);
-				Set chunkSet = chunking.chunkSet();
-				Iterator it = chunkSet.iterator();
+				Set<Chunk> chunkSet = chunking.chunkSet();
+				Iterator<Chunk> it = chunkSet.iterator();
 				while (it.hasNext()) {
 					com.aliasi.chunk.Chunk chunk = (com.aliasi.chunk.Chunk) it.next();
+					//Extract lower and upper bounds
+					
+					// Subtract the number of spaces before lower bound
+					
+					//From lb to ub-1, count the number of non whitespace characters, that is the end now
+					
+					//For each chunk, do
+					geneTagging annot = new geneTagging(aJCas);
+					annot.setSentenceID(termsInSentence[0]);
+					annot.setGeneTag(Annotation(chunking));
+					
+			        annot.addToIndexes();
 					
 				}
 				
 				
-				geneTagging annot = new geneTagging(aJCas);
-				annot.setSentenceID(termsInSentence[0]);
-				annot.setGeneTag(Annotation(chunking));
 				
-		        annot.addToIndexes();
 					
 			}
 
