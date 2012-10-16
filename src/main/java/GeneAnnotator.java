@@ -5,7 +5,7 @@ import org.apache.uima.jcas.JCas;
 /**
  * Gene annotator that detects gene names using LingPipe.
  */
-public class geneAnnotator extends JCasAnnotator_ImplBase {
+public class GeneAnnotator extends JCasAnnotator_ImplBase {
 
 	@Override
 	public void process(JCas aJCas) throws AnalysisEngineProcessException {

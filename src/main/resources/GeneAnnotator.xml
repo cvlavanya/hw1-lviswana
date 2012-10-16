@@ -2,7 +2,7 @@
 <analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
   <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
   <primitive>true</primitive>
-  <annotatorImplementationName>geneAnnotator</annotatorImplementationName>
+  <annotatorImplementationName>GeneAnnotator</annotatorImplementationName>
   <analysisEngineMetaData>
     <name>geneAnnotator</name>
     <description>A gene annotator that searches for gene names in the given document.</description>
