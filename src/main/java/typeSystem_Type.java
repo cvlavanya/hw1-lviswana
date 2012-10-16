@@ -34,11 +34,9 @@ public class typeSystem_Type extends Annotation_Type {
   	  }
     };
   /** @generated */
-  @SuppressWarnings ("hiding")
   public final static int typeIndexID = typeSystem.typeIndexID;
   /** @generated 
      @modifiable */
-  @SuppressWarnings ("hiding")
   public final static boolean featOkTst = JCasRegistry.getFeatOkTst("typeSystem");
 
 

@@ -36,11 +36,9 @@ public class geneTagging_Type extends Annotation_Type {
   	  }
     };
   /** @generated */
-  @SuppressWarnings ("hiding")
   public final static int typeIndexID = geneTagging.typeIndexID;
   /** @generated 
      @modifiable */
-  @SuppressWarnings ("hiding")
   public final static boolean featOkTst = JCasRegistry.getFeatOkTst("geneTagging");
  
   /** @generated */

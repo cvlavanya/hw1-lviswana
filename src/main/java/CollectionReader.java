@@ -27,7 +27,7 @@ import org.apache.uima.cas.CAS;
 import org.apache.uima.cas.CASException;
 import org.apache.uima.collection.CollectionException;
 import org.apache.uima.collection.CollectionReader_ImplBase;
-import org.apache.uima.examples.SourceDocumentInformation;
+//import org.apache.uima.examples.SourceDocumentInformation;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.DocumentAnnotation;
 import org.apache.uima.resource.ResourceConfigurationException;
@@ -156,12 +156,16 @@ public class CollectionReader extends CollectionReader_ImplBase {
     // For example, the Semantic Search CAS Indexer writes this information into the
     // search index that it creates, which allows applications that use the search index to
     // locate the documents that satisfy their semantic queries.
-    SourceDocumentInformation srcDocInfo = new SourceDocumentInformation(jcas);
+    
+    //This level of detail not needed here since, we process only one input file, if needed remove comment stat and end,
+    //and define SourceDocumentInformation.xml
+    
+    /*SourceDocumentInformation srcDocInfo = new SourceDocumentInformation(jcas);
     srcDocInfo.setUri(file.getAbsoluteFile().toURL().toString());
     srcDocInfo.setOffsetInSource(0);
     srcDocInfo.setDocumentSize((int) file.length());
     srcDocInfo.setLastSegment(mCurrentIndex == mFiles.size());
-    srcDocInfo.addToIndexes();
+    srcDocInfo.addToIndexes();*/
   }
 
   /**

@@ -17,12 +17,10 @@ public class typeSystem extends Annotation {
   /** @generated
    * @ordered 
    */
-  @SuppressWarnings ("hiding")
   public final static int typeIndexID = JCasRegistry.register(typeSystem.class);
   /** @generated
    * @ordered 
    */
-  @SuppressWarnings ("hiding")
   public final static int type = typeIndexID;
   /** @generated  */
   @Override

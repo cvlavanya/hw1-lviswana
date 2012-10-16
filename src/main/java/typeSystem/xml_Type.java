@@ -35,11 +35,9 @@ public class xml_Type extends Annotation_Type {
   	  }
     };
   /** @generated */
-  @SuppressWarnings ("hiding")
   public final static int typeIndexID = xml.typeIndexID;
   /** @generated 
      @modifiable */
-  @SuppressWarnings ("hiding")
   public final static boolean featOkTst = JCasRegistry.getFeatOkTst("typeSystem.xml");
 
 

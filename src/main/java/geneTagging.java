@@ -6,7 +6,7 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.JCasRegistry;
 import org.apache.uima.jcas.cas.TOP_Type;
 
-import org.apache.uima.jcas.cas.AnnotationBase;
+//import org.apache.uima.jcas.cas.AnnotationBase;
 import org.apache.uima.jcas.tcas.Annotation;
 
 
@@ -18,12 +18,10 @@ public class geneTagging extends Annotation {
   /** @generated
    * @ordered 
    */
-  @SuppressWarnings ("hiding")
   public final static int typeIndexID = JCasRegistry.register(geneTagging.class);
   /** @generated
    * @ordered 
    */
-  @SuppressWarnings ("hiding")
   public final static int type = typeIndexID;
   /** @generated  */
   @Override
