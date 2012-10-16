@@ -49,10 +49,17 @@ public class GeneAnnotator extends JCasAnnotator_ImplBase {
 				//Annotate each line using LingPipe
 				
 				Chunking chunking = chunker.chunk(resultSentence);
+				Set chunkSet = chunking.chunkSet();
+				Iterator it = chunkSet.iterator();
+				while (it.hasNext()) {
+					com.aliasi.chunk.Chunk chunk = (com.aliasi.chunk.Chunk) it.next();
+					
+				}
+				
 				
 				geneTagging annot = new geneTagging(aJCas);
 				annot.setSentenceID(termsInSentence[0]);
-				annot.setGeneTag(chunking);
+				annot.setGeneTag(Annotation(chunking));
 				
 		        annot.addToIndexes();
 					
