@@ -11,7 +11,7 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** 
- * Updated by JCasGen Tue Oct 16 09:09:42 EDT 2012
+ * Updated by JCasGen Tue Oct 16 15:20:57 EDT 2012
  * XML source: /Users/cvl/Work/workspace/hw1-lviswana/src/main/resources/typeSystem.xml
  * @generated */
 public class geneTagging extends Annotation {

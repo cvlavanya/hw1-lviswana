@@ -13,7 +13,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** 
- * Updated by JCasGen Tue Oct 16 09:09:43 EDT 2012
+ * Updated by JCasGen Tue Oct 16 15:20:57 EDT 2012
  * @generated */
 public class geneTagging_Type extends Annotation_Type {
   /** @generated */
