@@ -11,8 +11,8 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** 
- * Updated by JCasGen Sat Oct 13 20:31:35 EDT 2012
- * XML source: /Users/cvl/Work/workspace/hw1-lviswana/src/main/resources/collectionReader.xml
+ * Updated by JCasGen Tue Oct 16 09:09:42 EDT 2012
+ * XML source: /Users/cvl/Work/workspace/hw1-lviswana/src/main/resources/typeSystem.xml
  * @generated */
 public class geneTagging extends Annotation {
   /** @generated
@@ -107,17 +107,18 @@ public class geneTagging extends Annotation {
 
   /** getter for geneTag - gets 
    * @generated */
-  public AnnotationBase getGeneTag() {
+  public String getGeneTag() {
     if (geneTagging_Type.featOkTst && ((geneTagging_Type)jcasType).casFeat_geneTag == null)
       jcasType.jcas.throwFeatMissing("geneTag", "geneTagging");
-    return (AnnotationBase)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((geneTagging_Type)jcasType).casFeatCode_geneTag)));}
+    return jcasType.ll_cas.ll_getStringValue(addr, ((geneTagging_Type)jcasType).casFeatCode_geneTag);}
     
-  /** setter for geneTag - sets  
+  /** setter for geneTag - sets Holds the gene tag that has been annotated.
+ 
    * @generated */
-  public void setGeneTag(AnnotationBase v) {
+  public void setGeneTag(String v) {
     if (geneTagging_Type.featOkTst && ((geneTagging_Type)jcasType).casFeat_geneTag == null)
       jcasType.jcas.throwFeatMissing("geneTag", "geneTagging");
-    jcasType.ll_cas.ll_setRefValue(addr, ((geneTagging_Type)jcasType).casFeatCode_geneTag, jcasType.ll_cas.ll_getFSRef(v));}    
+    jcasType.ll_cas.ll_setStringValue(addr, ((geneTagging_Type)jcasType).casFeatCode_geneTag, v);}    
   }
 
     

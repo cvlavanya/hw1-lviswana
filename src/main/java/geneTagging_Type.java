@@ -13,7 +13,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** 
- * Updated by JCasGen Sat Oct 13 20:31:35 EDT 2012
+ * Updated by JCasGen Tue Oct 16 09:09:43 EDT 2012
  * @generated */
 public class geneTagging_Type extends Annotation_Type {
   /** @generated */
@@ -84,16 +84,16 @@ public class geneTagging_Type extends Annotation_Type {
   /** @generated */
   final int     casFeatCode_geneTag;
   /** @generated */ 
-  public int getGeneTag(int addr) {
+  public String getGeneTag(int addr) {
         if (featOkTst && casFeat_geneTag == null)
       jcas.throwFeatMissing("geneTag", "geneTagging");
-    return ll_cas.ll_getRefValue(addr, casFeatCode_geneTag);
+    return ll_cas.ll_getStringValue(addr, casFeatCode_geneTag);
   }
   /** @generated */    
-  public void setGeneTag(int addr, int v) {
+  public void setGeneTag(int addr, String v) {
         if (featOkTst && casFeat_geneTag == null)
       jcas.throwFeatMissing("geneTag", "geneTagging");
-    ll_cas.ll_setRefValue(addr, casFeatCode_geneTag, v);}
+    ll_cas.ll_setStringValue(addr, casFeatCode_geneTag, v);}
     
   
 
@@ -114,7 +114,7 @@ public class geneTagging_Type extends Annotation_Type {
     casFeatCode_sentenceText  = (null == casFeat_sentenceText) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_sentenceText).getCode();
 
  
-    casFeat_geneTag = jcas.getRequiredFeatureDE(casType, "geneTag", "uima.cas.AnnotationBase", featOkTst);
+    casFeat_geneTag = jcas.getRequiredFeatureDE(casType, "geneTag", "uima.cas.String", featOkTst);
     casFeatCode_geneTag  = (null == casFeat_geneTag) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_geneTag).getCode();
 
   }

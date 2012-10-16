@@ -15,6 +15,9 @@ import com.aliasi.chunk.Chunking;
 
 import com.aliasi.util.AbstractExternalizable;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import java.io.File;
 
 
@@ -55,16 +58,53 @@ public class GeneAnnotator extends JCasAnnotator_ImplBase {
 				Iterator<Chunk> it = chunkSet.iterator();
 				while (it.hasNext()) {
 					com.aliasi.chunk.Chunk chunk = (com.aliasi.chunk.Chunk) it.next();
+					
 					//Extract lower and upper bounds
+					int[] limits = new int[2]; // lower limit, upper limit
+					String inputTrimmed = chunk.toString().trim(); // Remove surrounding spaces.
+					String regexForLimits = "\\d+\\s*-\\s*\\d+";
+					Pattern p = Pattern.compile(regexForLimits);
+					Matcher m = p.matcher(inputTrimmed);
+					int count = 0;
+					while (m.find()) {
+						String limitSubstr = inputTrimmed.substring(m.start(), m.end());
+						String fields[] = limitSubstr.split("-");
+						limits[0] = Integer.parseInt(fields[0]);
+						limits[1] = Integer.parseInt(fields[1]);
+						if (count > 0) {
+							System.err.println("More than one match found. Not expected");
+						}
+						count += 1;
+					}
+					/*limits[0] has the lower bound and limits[1] has the upper bound.
+					 * But this includes spaces. Subtract that.
+					 * */
 					
 					// Subtract the number of spaces before lower bound
+					count=0;
+					int k;
+					for(k=0;k<limits[0];k++)
+						if(resultSentence.charAt(k)==' ')
+							count++;
+					int lowerBound=limits[0]-count;
+					//From limits[0] to limits[1], count the number of non whitespace characters, that is the end now
+					count=0;
+					for(k=limits[0];k<limits[1];k++)
+						if(resultSentence.charAt(k)==' ')
+							count++;
+					int upperBound=limits[1]-count;
 					
-					//From lb to ub-1, count the number of non whitespace characters, that is the end now
+					String geneTagString=resultSentence[limits[0]];
+					int l;
+					for(l=0,k=limits[0]+1;k<limits[1];k++,l++)
+						geneTagString[l]+=resultSentence.charAt(k);
 					
 					//For each chunk, do
 					geneTagging annot = new geneTagging(aJCas);
 					annot.setSentenceID(termsInSentence[0]);
-					annot.setGeneTag(Annotation(chunking));
+					annot.setBegin(lowerBound);
+					annot.setEnd(upperBound);
+					annot.setGeneTag(geneTagString);
 					
 			        annot.addToIndexes();
 					

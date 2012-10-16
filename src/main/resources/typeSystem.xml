@@ -22,8 +22,9 @@
         </featureDescription>
         <featureDescription>
           <name>geneTag</name>
-          <description/>
-          <rangeTypeName>uima.cas.AnnotationBase</rangeTypeName>
+          <description>Holds the gene tag that has been annotated.
+</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
         </featureDescription>
       </features>
     </typeDescription>
