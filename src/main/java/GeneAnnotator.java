@@ -3,8 +3,7 @@ import org.apache.uima.analysis_component.JCasAnnotator_ImplBase;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.cas.FSIndex;
 import org.apache.uima.jcas.JCas;
-import org.apache.uima.tutorial.RoomNumber;
-import org.apache.uima.tutorial.UimaAcronym;
+
 
 import java.util.Iterator;
 import java.util.Set;
@@ -94,10 +93,7 @@ public class GeneAnnotator extends JCasAnnotator_ImplBase {
 							count++;
 					int upperBound=limits[1]-count;
 					
-					String geneTagString=resultSentence[limits[0]];
-					int l;
-					for(l=0,k=limits[0]+1;k<limits[1];k++,l++)
-						geneTagString[l]+=resultSentence.charAt(k);
+					String geneTagString=resultSentence.substring(limits[0],limits[1]);
 					
 					//For each chunk, do
 					geneTagging annot = new geneTagging(aJCas);
