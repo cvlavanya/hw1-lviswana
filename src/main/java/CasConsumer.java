@@ -24,6 +24,7 @@ import java.util.Iterator;
 
 import org.apache.uima.cas.CAS;
 import org.apache.uima.cas.CASException;
+import org.apache.uima.cas.FSIterator;
 import org.apache.uima.collection.CasConsumer_ImplBase;
 import org.apache.uima.collection.base_cpm.CasObjectProcessor;
 import org.apache.uima.examples.SourceDocumentInformation;
@@ -109,36 +110,23 @@ public class CasConsumer extends CasConsumer_ImplBase implements CasObjectProces
       throw new ResourceProcessException(e);
     }
 
-    boolean titleP = false;
-    String docUri = null;
-    Iterator it = jcas.getAnnotationIndex(SourceDocumentInformation.type).iterator();
-    if (it.hasNext()) {
-      SourceDocumentInformation srcDocInfo = (SourceDocumentInformation) it.next();
-      docUri = srcDocInfo.getUri();
-    }
+    
 
     // iterate and print annotations
-    Iterator annotationIter = jcas.getAnnotationIndex().iterator();
+    FSIterator<Annotation> annotationIter = jcas.getAnnotationIndex(geneTagging.type).iterator();
+    
     while (annotationIter.hasNext()) {
-      Annotation annot = (Annotation) annotationIter.next();
-      if (titleP == false) {
-        try {
-          fileWriter.write("\n\n<++++NEW DOCUMENT++++>\n");
-          if (docUri != null)
-            fileWriter.write("DOCUMENT URI:" + docUri + "\n");
-          fileWriter.write("\n");
-        } catch (IOException e) {
-          throw new ResourceProcessException(e);
-        }
-        titleP = true;
-      }
+    	//Annotation annot = (Annotation) annotationIter.next();
+        geneTagging annot = (geneTagging) annotationIter.next();
       // get the text that is enclosed within the annotation in the CAS
       String aText = annot.getCoveredText();
       aText = aText.replace('\n', ' ');
       aText = aText.replace('\r', ' ');
-      // System.out.println( annot.getType().getName() + " "+aText);
+      //CVL System.out.println( annot.getType().getName() + " "+aText);
       try {
-        fileWriter.write(annot.getType().getName() + " " + aText + "\n");
+       //Writing in the needed output format.
+    	fileWriter.write((annot).getSentenceID()+"|"+annot.getBegin()+" "+annot.getEnd()+"|"+((geneTagging) annot).getGeneTag()+"\n");
+    	//fileWriter.write(annot.getBegin()+" "+annot.getEnd() +"\n");
         fileWriter.flush();
       } catch (IOException e) {
         throw new ResourceProcessException(e);

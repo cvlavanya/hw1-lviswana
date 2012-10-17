@@ -54,6 +54,7 @@ public class GeneAnnotator extends JCasAnnotator_ImplBase {
 				
 				Chunking chunking = chunker.chunk(resultSentence);
 				Set<Chunk> chunkSet = chunking.chunkSet();
+				
 				Iterator<Chunk> it = chunkSet.iterator();
 				while (it.hasNext()) {
 					com.aliasi.chunk.Chunk chunk = (com.aliasi.chunk.Chunk) it.next();
@@ -87,15 +88,16 @@ public class GeneAnnotator extends JCasAnnotator_ImplBase {
 							count++;
 					int lowerBound=limits[0]-count;
 					//From limits[0] to limits[1], count the number of non whitespace characters, that is the end now
-					count=0;
+					int count1=0;
 					for(k=limits[0];k<limits[1];k++)
 						if(resultSentence.charAt(k)==' ')
-							count++;
-					int upperBound=limits[1]-count;
+							count1++;
+					int upperBound=limits[1]-count-count1-1;
 					
 					String geneTagString=resultSentence.substring(limits[0],limits[1]);
 					
 					//For each chunk, do
+					
 					geneTagging annot = new geneTagging(aJCas);
 					annot.setSentenceID(termsInSentence[0]);
 					annot.setBegin(lowerBound);
@@ -103,7 +105,6 @@ public class GeneAnnotator extends JCasAnnotator_ImplBase {
 					annot.setGeneTag(geneTagString);
 					
 			        annot.addToIndexes();
-					
 				}
 				
 				

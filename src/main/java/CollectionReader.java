@@ -156,12 +156,12 @@ public void getNext(CAS aCAS) throws IOException, CollectionException {
     // search index that it creates, which allows applications that use the search index to
     // locate the documents that satisfy their semantic queries.
     
-    SourceDocumentInformation srcDocInfo = new SourceDocumentInformation(jcas);
+    /*SourceDocumentInformation srcDocInfo = new SourceDocumentInformation(jcas);
     srcDocInfo.setUri(file.getAbsoluteFile().toURL().toString());
     srcDocInfo.setOffsetInSource(0);
     srcDocInfo.setDocumentSize((int) file.length());
     srcDocInfo.setLastSegment(mCurrentIndex == mFiles.size());
-    srcDocInfo.addToIndexes();
+    srcDocInfo.addToIndexes();*/
   }
 
   /**
