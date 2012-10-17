@@ -28,7 +28,7 @@ import org.apache.uima.collection.CollectionReader_ImplBase;
 //import org.apache.uima.examples.SourceDocumentInformation;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.DocumentAnnotation;
-import org.apache.uima.resource.ResourceConfigurationException;
+//import org.apache.uima.resource.ResourceConfigurationException;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.util.FileUtils;
 import org.apache.uima.util.Progress;
@@ -104,24 +104,6 @@ public class CollectionReader extends CollectionReader_ImplBase {
 	  }
 	  
   
-  /**
-   * This method adds files in the directory passed in as a parameter to mFiles.
-   * If mRecursive is true, it will include all files in all
-   * subdirectories (recursively), as well. 
-   * 
-   * @param dir
-   */
-  private void addFilesFromDir(File dir) {
-    File[] files = dir.listFiles();
-    for (int i = 0; i < files.length; i++) {
-      if (!files[i].isDirectory()) {
-        mFiles.add(files[i]);
-      } else if (mRecursive) {
-        addFilesFromDir(files[i]);
-      }
-    }
-  }
-
   /**
    * @see org.apache.uima.collection.CollectionReader#hasNext()
    */
