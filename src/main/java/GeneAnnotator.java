@@ -39,7 +39,7 @@ public class GeneAnnotator extends JCasAnnotator_ImplBase {
 		//Model File for LingPipe
 		try
 		{
-			String fileName="src/main/resources/data/bio-genetag.HmmChunker";
+			String fileName="src/main/resources/bio-genetag.HmmChunker";
 			File modelFile = new File(fileName);
 			Chunker chunker = (Chunker) AbstractExternalizable.readObject(modelFile);
 			//Get lines from the input document to feed to LingPipe
