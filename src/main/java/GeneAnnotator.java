@@ -24,7 +24,11 @@ import java.io.File;
  * Gene annotator that detects gene names using LingPipe.
  */
 public class GeneAnnotator extends JCasAnnotator_ImplBase {
-
+	/**
+	 * The process() method takes the content of the document, feeds it to LingPipe.
+	 * Get the chunks, extracts the offsets, processes it as required by the output format.
+	 * Then includes all this information as annotation and adds it to index.
+	 */
 	@Override
 	public void process(JCas aJCas) throws AnalysisEngineProcessException {
 		// TODO Auto-generated method stub
@@ -35,7 +39,8 @@ public class GeneAnnotator extends JCasAnnotator_ImplBase {
 		//Model File for LingPipe
 		try
 		{
-			File modelFile = new File("/Users/cvl/Work/workspace/hw1-lviswana/src/main/resources/bio-genetag.HmmChunker");
+			String fileName="src/main/resources/data/bio-genetag.HmmChunker";
+			File modelFile = new File(fileName);
 			Chunker chunker = (Chunker) AbstractExternalizable.readObject(modelFile);
 			//Get lines from the input document to feed to LingPipe
 			String[] lines=docText.split("\n");
