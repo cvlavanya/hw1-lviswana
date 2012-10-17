@@ -20,7 +20,7 @@
       <nameValuePair>
         <name>outputFile</name>
         <value>
-          <string>src/main/resources/data/hw1-lviswana.out</string>
+          <string>hw1-lviswana.out</string>
         </value>
       </nameValuePair>
     </configurationParameterSettings>

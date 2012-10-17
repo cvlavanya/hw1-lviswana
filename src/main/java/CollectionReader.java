@@ -35,7 +35,7 @@ import org.apache.uima.util.Progress;
 import org.apache.uima.util.ProgressImpl;
 
 /**
- * A simple collection reader that reads documents from a directory in the filesystem. It can be
+ * A simple collection reader that reads a document from a directory in the filesystem. It can be
  * configured with the following parameters:
  * <ul>
  * <li><code>InputDirectory</code> - path to directory containing files</li>

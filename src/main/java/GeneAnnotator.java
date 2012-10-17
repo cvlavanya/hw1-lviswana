@@ -26,7 +26,7 @@ import java.io.File;
 public class GeneAnnotator extends JCasAnnotator_ImplBase {
 	/**
 	 * The process() method takes the content of the document, feeds it to LingPipe.
-	 * Get the chunks, extracts the offsets, processes it as required by the output format.
+	 * Gets the chunks, extracts the offsets, processes it as required by the output format.
 	 * Then includes all this information as annotation and adds it to index.
 	 */
 	@Override
@@ -43,6 +43,7 @@ public class GeneAnnotator extends JCasAnnotator_ImplBase {
 			File modelFile = new File(fileName);
 			Chunker chunker = (Chunker) AbstractExternalizable.readObject(modelFile);
 			//Get lines from the input document to feed to LingPipe
+			 
 			String[] lines=docText.split("\n");
 			for(int i=0;i<lines.length;i++){
 				String trimmedLine = lines[i].trim(); // Remove leading and trailing spaces

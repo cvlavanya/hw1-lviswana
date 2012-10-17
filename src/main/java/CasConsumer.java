@@ -100,6 +100,9 @@ public class CasConsumer extends CasConsumer_ImplBase implements CasObjectProces
    * 
    * @see org.apache.uima.collection.base_cpm.CasObjectProcessor#processCas(CAS)
    */
+  /**
+   * Here, we obtain the annotations from indexes and print it to a file in the required format.
+   */
   public synchronized void processCas(CAS aCAS) throws ResourceProcessException {
     JCas jcas;
     try {
@@ -111,15 +114,16 @@ public class CasConsumer extends CasConsumer_ImplBase implements CasObjectProces
     
 
     // iterate and print annotations
+    //FSIterator<Annotation> annotationIter = jcas.getAnnotationIndex(geneTagging.type).iterator();
     FSIterator<Annotation> annotationIter = jcas.getAnnotationIndex(geneTagging.type).iterator();
     
     while (annotationIter.hasNext()) {
     	
         geneTagging annot = (geneTagging) annotationIter.next();
       // get the text that is enclosed within the annotation in the CAS
-      String aText = annot.getCoveredText();
+      /*String aText = annot.getCoveredText();
       aText = aText.replace('\n', ' ');
-      aText = aText.replace('\r', ' ');
+      aText = aText.replace('\r', ' ');*/
       //CVL System.out.println( annot.getType().getName() + " "+aText);
       try {
        //Writing in the needed output format.
