@@ -4,10 +4,7 @@
   <groupId>edu.cmu.lti.11791.f12.hw1</groupId>
   <artifactId>hw1-lviswana</artifactId>
   <version>0.0.1</version>
-  <scm>
-		<connection>scm:git:git@github.com:cvlavanya/hw1-lviswana.git</connection>
-		<developerConnection>scm:git:git@github.com:cvlavanya/hw1-lviswana.git</developerConnection>
-  </scm>
+  
   <repositories>
     <repository>
       <id>oaqa</id>
