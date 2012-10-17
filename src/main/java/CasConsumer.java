@@ -116,7 +116,7 @@ public class CasConsumer extends CasConsumer_ImplBase implements CasObjectProces
     FSIterator<Annotation> annotationIter = jcas.getAnnotationIndex(geneTagging.type).iterator();
     
     while (annotationIter.hasNext()) {
-    	//Annotation annot = (Annotation) annotationIter.next();
+    	
         geneTagging annot = (geneTagging) annotationIter.next();
       // get the text that is enclosed within the annotation in the CAS
       String aText = annot.getCoveredText();
