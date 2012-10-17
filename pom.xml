@@ -113,5 +113,7 @@
   </dependencies>
   <scm>
   	<url>scm:git:git://github.com/cvlavanya/hw1-lviswana.git</url>
+  	<connection>scm:git:git@github.com:cvlavanya/hw1-lviswana.git</connection>
+  	<developerConnection>scm:git:git@github.com:cvlavanya/hw1-lviswana.git</developerConnection>
   </scm>
 </project>
