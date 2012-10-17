@@ -9,8 +9,8 @@
     <vendor/>
     <configurationParameters>
       <configurationParameter>
-        <name>InputFile</name>
-        <description>Input file.</description>
+        <name>InputFileDir</name>
+        <description>Input file directory.</description>
         <type>String</type>
         <multiValued>false</multiValued>
         <mandatory>true</mandatory>
@@ -18,9 +18,9 @@
     </configurationParameters>
     <configurationParameterSettings>
       <nameValuePair>
-        <name>InputFile</name>
+        <name>InputFileDir</name>
         <value>
-          <string>src/main/resources/data/sample.in</string>
+          <string>src/main/resources/data</string>
         </value>
       </nameValuePair>
     </configurationParameterSettings>
